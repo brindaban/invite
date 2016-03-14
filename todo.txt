@@ -1,0 +1,60 @@
+PRINTING INVITATION LABLE:
+
+given:
+    1.  A file will be given with the data, the data formatted like
+
+        FirstName   LastName Gender Age City State  Country
+        Gavin,Hyatt,Male,36,Crooks ton,Illinois,Romania
+        Carlos,Johns,Male,35,West Shanna,South Carolina,Bangladesh
+
+------------------------------------------------------------------------------------------------------
+
+requirments:
+    1. User will give the file Name and option.[nameFormat has to provide as an option , it is necessary and fileName will be at last]
+        and If User didn't give any nameFormat, automatically it will be shown as firstLast format.
+        ------------------------------------------------------------------------------------------------------
+       a> FORMAT:  appName -option fileName
+        like:   1> PrintLables -nameFormat firstLast -file records
+
+           o/p ->Ms Judah Brakus
+                 Mr Ressie Kutch
+        ------------------------------------------------------------------------------------------------------
+       b> FORMAT: appName -CountryName FileName
+        like:    1> PrintLables -country Bangladesh -nameFormat lastFirst -file records
+                 or> PrintLables -nameFormat lastFirst -country Bangladesh -file records
+
+           o/p ->Ms Jacobi, Lavina, Bangladesh
+                 Mr Carroll, Callie, Bangladesh
+
+        ------------------------------------------------------------------------------------------------------
+       c> FORMAT: appName CountryName Age FileName
+        like:   1> PrintLables -country Bangladesh -nameFormat lastFirst -age 23 -file records
+                 or PrintLables -age 23 -country Bangladsh -nameFormat lastFirst -file records
+
+           o/p ->Mr Dare, Ilene, Bangladesh, 34
+                 Ms Bednar, Nova, Bangladesh, 21
+
+        ------------------------------------------------------------------------------------------------------
+        d> FORMAT: appName Age FileName
+        like:   1> PrintLables -nameFormat firstLast -age 20 -file records
+                or PrintLables -age 20 -nameFormat firstLast -file records
+
+        o/p ->Ms Jeremy Erdman, 33
+              Mr Jaclyn Bartoletti, 22
+
+        ------------------------------------------------------------------------------------------------------
+    2.   When user want to see the result in box pattern. By just giving the command -pattern.
+
+        a> FORMAT: appName Country Pattern FileName
+        like:   1> PrintLables -country Bangladesh -pattern box -nameFormat lastFirst -file records
+               or> PrintLables -pattern -nameFormat lastFirst -file records
+
+        o/p -> +------------------------------+
+               | Mr Dare, Ilene               |
+               |------------------------------|
+               | Crooks ton, North Carolina   |
+               | Bangladesh                   |
+               +------------------------------+
+
+        b> FORMAT: appName -country
+
