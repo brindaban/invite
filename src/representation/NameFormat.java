@@ -12,4 +12,6 @@ public enum NameFormat {
             return String.format("%s %s, %s", title, lastName, firstName);
         }
     };
+
+    public abstract String callWithTitle(String prefix, String first, String last);
 }

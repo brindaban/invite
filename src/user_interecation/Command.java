@@ -1,9 +1,13 @@
 package user_interecation;
 
-import filtration.Filter;
-import representation.LableGenerator;
+import filtration.FilterCollection;
+import filtration.FiltringOption;
+import representation.AddressFormat;
 import representation.NameFormat;
+import representation.TemplateGenerate;
+import filtration.Filter;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Command {
@@ -11,21 +15,33 @@ public class Command {
 
     private Filter filter;
 
-    private LableGenerator lableGenerator;
-
     public Command(String[] commands) {
         this.commands = commands;
-        setCommandsInFilter();
-
     }
 
-    private void setCommandsInFilter() {
-
+    private int getIndex(String element){
+        return Arrays.asList(commands).indexOf(element);
     }
 
     private NameFormat getNameFormat() {
-        String nameFormat = commands[Arrays.asList(commands).indexOf("-nameFormat")+1].toUpperCase();
+        String nameFormat = commands[getIndex("-nameFormat")+1].toUpperCase();
         return NameFormat.valueOf(nameFormat);
+    }
+
+    public TemplateGenerate getTempleteGenerate(){
+        return new TemplateGenerate(getNameFormat(),new AddressFormat());
+    }
+
+    public FilterCollection getAllFiterOptionWhichUserWant(){
+        ArrayList<Filter> filterStorage = new ArrayList<>();
+        int countryIndex = getIndex("-country")+1;
+        int ageIndex = getIndex("-age")+1;
+
+        if (countryIndex!=0)
+            filterStorage.add(FiltringOption.COUNTRY.getFilter(commands[countryIndex]));
+        if (ageIndex!=0)
+            filterStorage.add(FiltringOption.AGEABOVE.getFilter(commands[ageIndex]));
+        return new FilterCollection(filterStorage);
     }
 
     public String getFileName(){

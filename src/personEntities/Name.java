@@ -1,5 +1,7 @@
 package personEntities;
 
+import representation.NameFormat;
+
 public class Name {
     private String first;
 
@@ -8,5 +10,9 @@ public class Name {
     public Name(String firstName, String lastName) {
         this.first = firstName;
         this.last = lastName;
+    }
+
+    public String callWithPrefix(String prefix, NameFormat nameFormat) {
+        return nameFormat.callWithTitle(prefix,first,last);
     }
 }

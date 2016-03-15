@@ -1,5 +1,9 @@
 package personEntities;
 
+import filtration.Filter;
+import representation.AddressFormat;
+import representation.NameFormat;
+
 public class Guest {
     private Name name;
 
@@ -23,4 +27,15 @@ public class Guest {
         return new Guest(name, gender, new Age(Integer.parseInt(age)), address);
     }
 
+    public boolean isValid(Filter eachFilter) {
+        return eachFilter.isValid(age, address);
+    }
+
+    public String generateName(NameFormat nameFormat) {
+        return name.callWithPrefix(gender.getPrefix(),nameFormat);
+    }
+
+    public String generateAddress(AddressFormat addressFormat) {
+        return address.represent(addressFormat);
+    }
 }
