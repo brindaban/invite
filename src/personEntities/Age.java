@@ -1,6 +1,6 @@
 package personEntities;
 
-import filtration.AgePredicate;
+import filtration.age.AgePredicate;
 
 public class Age {
     private int age;

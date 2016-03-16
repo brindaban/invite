@@ -1,6 +1,6 @@
-package filtration;
+package filtration.age;
 
-public class OldarThanAge implements AgePredicate{
+public class OldarThanAge implements AgePredicate {
     private int ageLimit;
     public OldarThanAge(int givenAge) {
         this.ageLimit = givenAge;

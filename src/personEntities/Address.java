@@ -1,6 +1,6 @@
 package personEntities;
 
-import filtration.CountryPredicate;
+import filtration.country.CountryPredicate;
 import representation.AddressFormat;
 
 public class Address {

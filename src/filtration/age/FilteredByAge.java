@@ -1,5 +1,6 @@
-package filtration;
+package filtration.age;
 
+import filtration.Filter;
 import personEntities.Address;
 import personEntities.Age;
 

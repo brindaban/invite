@@ -9,10 +9,10 @@ import java.io.IOException;
 import java.util.List;
 
 
-public class CommandLineInterection {
+public class CommandLineInteraction {
     private IOoperation io;
 
-    public CommandLineInterection(IOoperation io) {
+    public CommandLineInteraction(IOoperation io) {
         this.io = io;
     }
 

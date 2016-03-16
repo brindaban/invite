@@ -1,7 +1,7 @@
 package user_interecation;
 
 import filtration.FilterCollection;
-import filtration.FiltringOption;
+import filtration.FilteringOption;
 import representation.AddressFormat;
 import representation.NameFormat;
 import representation.TemplateGenerate;
@@ -13,7 +13,6 @@ import java.util.Arrays;
 public class Command {
     private String[] commands;
 
-    private Filter filter;
 
     public Command(String[] commands) {
         this.commands = commands;
@@ -38,9 +37,9 @@ public class Command {
         int ageIndex = getIndex("-age")+1;
 
         if (countryIndex!=0)
-            filterStorage.add(FiltringOption.COUNTRY.getFilter(commands[countryIndex]));
+            filterStorage.add(FilteringOption.COUNTRY.getFilter(commands[countryIndex]));
         if (ageIndex!=0)
-            filterStorage.add(FiltringOption.AGEABOVE.getFilter(commands[ageIndex]));
+            filterStorage.add(FilteringOption.AGEABOVE.getFilter(commands[ageIndex]));
         return new FilterCollection(filterStorage);
     }
 
